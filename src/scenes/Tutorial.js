@@ -8,6 +8,7 @@ class Tutorial extends Phaser.Scene {
         this.load.image('shark', './assets/shark.png');
         this.load.image('rocket','./assets/rocket.png');
         this.load.image('background', './assets/underwater.png');
+        this.load.image('controls', './assets/arrows.png');
         //key images
         //warning images
     }
