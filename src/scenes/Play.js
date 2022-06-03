@@ -12,7 +12,8 @@ class Play extends Phaser.Scene {
         this.load.audio('music', './assets/backmusic.wav');
 
         //spritesheets
-        this.load.spritesheet('explosion','./assets/explosion.png', {frameWidth: 64, frameHeight: 32, startFrame: 0, endFrame: 9});
+        this.load.spritesheet('explosion','./assets/explosion.png', {frameWidth: 64, frameHeight: 32, startFrame: 0, endFrame: 9})
+        this.load.spritesheet('damage', './assets/submarinehurt.png', {frameWidth: 59, frameHeight: 64, startFrame: 0, endFrame: 5});
 
     }
     
@@ -160,5 +161,19 @@ class Play extends Phaser.Scene {
         });
         this.sound.play('movement');
         this.input.keyboard.enabled = true;
+    }
+    
+    sharkBite(shark, fish){
+        // temporarily hide player
+        shark.alpha = 0;                         
+        // create explosion sprite at player position
+        let chomp = this.add.sprite(shark.x, shark.y, 'chomp').setOrigin(0, 0.5);
+        chomp.anims.play('chomp');
+        chomp.on('animationcomplete', () => {
+            fish.alpha = 0;
+            chomp.destroy();
+        });
+        this.sound.play('movement');
+        shark.alpha = 1; 
     }
 }
