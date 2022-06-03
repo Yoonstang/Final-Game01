@@ -8,7 +8,7 @@ The Under Water - 5/31/2022
 let config = {
     type: Phaser.Auto,
     width: 640,
-    height: 300,
+    height: 480,
     scene: [ Menu, Play, Tutorial],
     physics: {
         default: 'arcade',
