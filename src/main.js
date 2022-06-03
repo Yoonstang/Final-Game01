@@ -1,12 +1,12 @@
 /*
 Spencer Kim
 
-The Under Water - 6/2/2022
+The Under Water - 5/31/2022
 
 */
 
 let config = {
-    type: Phaser.AUTO,
+    type: Phaser.Auto,
     width: 640,
     height: 300,
     scene: [ Menu, Play, Tutorial],

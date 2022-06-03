@@ -38,7 +38,7 @@ class Play extends Phaser.Scene {
         //create submarine
         this.submarine = new Submarine(this, game.config.width/3 + 25, game.config.height/2, 'submarine').setOrigin(0.5, 0.5)
         //create shark
-        this.shark = new this.shark(this, -60, game.config.height/2, 'shark').setOrigin(0, 0.5)
+        this.shark = new Shark(this, 10, game.config.height/2, 'shark').setOrigin(0, 0.5)
         //create rocket
         this.rocket01 = new Rocket(this, game.config.width, game.config.height/2, 'rocket').setOrigin(0.5, 0.5);
         this.rocket02 = new Rocket(this, game.config.width, game.config.height/2, 'rocket').setOrigin(0.5, 0.5);

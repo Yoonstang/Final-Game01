@@ -29,20 +29,17 @@ class Menu extends Phaser.Scene {
         }
     
         //menu text
-        this.add.text(gmae.config.width/2, game.config.height/2 - borderUISize - borderPadding, 'Press ENTER to Start Tutorial', menuConfig).setOrigin(0.5);
+        this.add.text(game.config.width/2, game.config.height/2 - borderUISize - borderPadding, 'Press ENTER to Start Tutorial', menuConfig).setOrigin(0.5);
 
         //define keys;
-        keyEnter = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ENTER)
-        KeyUP = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.UP)
-        keyDOWN = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.DOWN)
-
-    
+        this.keyEnter = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ENTER)
+        this.keyUP = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.UP)
+        this.keyDOWN = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.DOWN)
     }
 
     update(){
-
-        if(Phaser.Input.Keyboard.JustDown(keyENTER)) {
-            //play enter sound
+        if(this.keyEnter.isDown) {  
+        //play enter sound
             //skips intro
         this.scene.start("tutorialScene");
         this.sound.play('movement');
