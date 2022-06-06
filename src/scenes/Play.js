@@ -12,8 +12,8 @@ class Play extends Phaser.Scene {
         this.load.audio('music', './assets/backmusic.wav');
 
         //spritesheets
-        this.load.spritesheet('explosion','./assets/explosion.png', {frameWidth: 64, frameHeight: 32, startFrame: 0, endFrame: 9})
-        this.load.spritesheet('damage', './assets/submarinehurt.png', {frameWidth: 59, frameHeight: 64, startFrame: 0, endFrame: 5});
+        this.load.spritesheet('sharkChomp', './assets/sharkani.png', {frameWidth: 128, frameHeight: 96, startFrame: 0, endFrame: 4});
+        this.load.spritesheet('damage', './assets/submarinehurt.png', {frameWidth: 48, frameHeight: 32, startFrame: 1, endFrame: 3});
 
     }
     
@@ -61,12 +61,12 @@ class Play extends Phaser.Scene {
         //config animations
         this.anims.create({
             key: 'hurt',
-            frames: this.anims.generateFrameNumbers('damage', {start: 0, end: 4, first: 0}),
+            frames: this.anims.generateFrameNames('damage', {start: 0, end: 5, first: 0}),
             frameRate: 12
         });
         this.anims.create({
             key: 'chomp',
-            frames: this.anims.generateFrameNumbers('sharkChomp', {start: 0, end: 4, first: 0}),
+            frames: this.anims.generateFrameNames('sharkChomp', {start: 0, end: 4, first: 0}),
             frameRate: 12
         });
 
@@ -129,7 +129,7 @@ class Play extends Phaser.Scene {
         }else
         {
             this.add.text(game.config.width/2, game.config.height/2, 'GAME OVER - Press ENTER to restart', { fontFamily: 'Georgia, "Goudy Bookletter 1911", Times, serif'});
-            if(Phaser.Input.Keyboard.JustDown(keyENTER)) {
+            if (Phaser.Input.Keyboard.JustDown(keyENTER)) {
                 this.game.sound.stopAll();
                 this.scene.restart();
             }
