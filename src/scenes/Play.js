@@ -12,7 +12,6 @@ class Play extends Phaser.Scene {
         this.load.audio('music', './assets/backmusic.wav');
 
         //spritesheets
-        this.load.spritesheet('sharkChomp', './assets/sharkani.png', {frameWidth: 128, frameHeight: 96, startFrame: 0, endFrame: 4});
         this.load.spritesheet('damage', './assets/submarinehurt.png', {frameWidth: 48, frameHeight: 32, startFrame: 1, endFrame: 3});
 
     }
