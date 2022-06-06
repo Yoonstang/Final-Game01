@@ -123,7 +123,7 @@ class Play extends Phaser.Scene {
             }
             if(this.checkCollision(this.submarine, this.shark)){
                 //
-                this.sharkBite(this.shark, this.submarine)
+                // this.sharkBite(this.shark, this.submarine)
                 this.gameOver = true
             }
         }else
@@ -155,7 +155,7 @@ class Play extends Phaser.Scene {
         // create explosion sprite at player position 
         let pain = this.add.sprite(submarine.x, submarine.y, 'hurt').setOrigin(0.5, 0.5);
         pain.anims.play('hurt');
-        pain.on('animaioncomplete',() => {
+        pain.on('animationcomplete',() => {
             submarine.alpha = 1;
             pain.destroy();
         });
